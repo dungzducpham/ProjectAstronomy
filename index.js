@@ -114,7 +114,7 @@ app.get("/News",function (req,res){
     var para = req.query.Title || "";
     var sql_txt = "select * from News where Title like '%"+para+"%';";
     sql.query(sql_txt,function (err,rs){
-        if(err) res.send("Error....");
+        if(err) res.send(err);
             else{
                 // console.log(sql_txt);
                 // res.send(rs.recordsets);
